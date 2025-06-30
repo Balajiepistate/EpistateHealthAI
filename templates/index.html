@@ -1,22 +1,12 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Epident AI - Dental Assistant</title>
+    <title>Epident AI - Treatment Plan</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Epident AI - Treatment Plan</h1>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-          {% if messages %}
-            <ul class="flashes">
-            {% for category, message in messages %}
-              <li class="{{ category }}">{{ message }}</li>
-            {% endfor %}
-            </ul>
-          {% endif %}
-        {% endwith %}
         <form action="/submit" method="POST">
             <input type="text" name="name" placeholder="Patient Name" required><br>
             <input type="email" name="email" placeholder="Email" required><br>
@@ -24,6 +14,28 @@
             <input type="number" name="cost" placeholder="Estimated Cost" required><br>
             <button type="submit">Submit</button>
         </form>
+
+        <hr>
+
+        <section id="epistatehealth-info">
+            <h2>What EpistateHealth AI Can Help With</h2>
+            <ul>
+                <li><strong>Visual Detection:</strong> Identifies potential anomalies such as cavities, bone density loss, impacted teeth, periapical radiolucency, and restoration issues.</li>
+                <li><strong>Structural Description:</strong> Analyzes and labels dental anatomy: molars, incisors, crowns, implants, fillings, bridges, etc.</li>
+                <li><strong>Preliminary Treatment Suggestions:</strong> Offers suggestions such as scaling, restoration, root canal therapy, extraction, or periodontal follow-up — based on the visual evidence.</li>
+                <li><strong>Comparative Review:</strong> Assists in comparing before-and-after images to assess treatment effectiveness over time.</li>
+                <li><strong>Patient Communication Support:</strong> Generates clear, layperson-friendly summaries and visual references to help dentists educate patients.</li>
+                <li><strong>Workflow Support:</strong> Accelerates case discussions, treatment planning, and second-opinion generation — especially in high-volume practices.</li>
+            </ul>
+            <h3>Note to Users</h3>
+            <p>
+                EpistateHealth AI is designed as a clinical support tool to enhance dental professionals' workflows.  
+                It performs best with high-quality, well-lit oral images or clear panoramic/periapical X-rays.  
+                Interpretations and treatment suggestions are probabilistic in nature, based on general datasets.  
+                Clinical decisions must always incorporate clinical judgment, patient history, and in-person examination.  
+                The tool is best used for preliminary assessment, educational explanation, and treatment planning discussions.
+            </p>
+        </section>
     </div>
 </body>
 </html>
