@@ -8,7 +8,7 @@ def generate_pdf(name, treatment, cost):
     pdf.cell(200, 10, txt="Dental Treatment Plan", ln=True, align='C')
     pdf.cell(200, 10, txt=f"Patient Name: {name}", ln=True)
     pdf.multi_cell(200, 10, txt=f"Treatment Details: {treatment}")
-    pdf.cell(200, 10, txt=f"Estimated Cost: ₹{cost}", ln=True)
+    pdf.cell(200, 10, txt=f"Estimated Cost: INR{cost}", ln=True)
 
     file_path = f"treatment_plan_{name.replace(' ', '_')}.pdf"
     pdf.output(file_path)
